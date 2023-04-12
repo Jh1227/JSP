@@ -1,0 +1,50 @@
+
+< Cookie_Session.txt >
+
+# 쿠키 ( cookie )
+- HTTP 프로토콜은 웹 브라우저(클라이언트)의 요청에 대한 응답을 하고 나면, 해당 클라이언트의 연결을 지속하고 있지 않습니다.
+  상태가 없는 프로토콜을 위해 상태를 지속시키기 위한 방법입니다.
+- 파일로 저장되기 때문에 브라우저가 종료되어도 생존 기간동안 데이터가 유지됩니다.
+
+# Cookie 사용
+- Cookie 객체 생성
+  > Cookie cookie = new Cookie( String name, String value );
+- Cookie 를 response 객체에 추가
+  > response.addCookie( cookie )
+- request 객체를 사용해서 쿠키 읽기
+  > Cookie[] cookies = request.getCookies()
+  
+# Cookie 사용하는 순서
+- 1. Cookie 객체 생성
+  2. Cookie 설정 - 유효시간.....
+  3. 웹 브라우저에 생성된 Cookie 전송
+  
+# 웹 브라우저에 저장된 Cookie 를 사용하는 절차
+- 1. 웹 브라우저에서 Cookie 얻기
+  2. Cookie 는 이름, 값의 쌍으로 된 배열형태로 반환됩니다
+     반환된 Cookie 의 배열에서 Cookie 이름을 가져옵니다
+  3. Cookie 이름을 통해서 Cookie 에 설정된 값을 가져옵니다
+  
+  
+---------------------------------------------------------------------------------------------------
+  
+# 세션 ( session )
+- 웹 컨테이너에 상태를 유지하기 위한 정보를 저장합니다
+  > 웹 브라우저당 1개씩 생성됩니다
+- 웹서버는 각각의 웹 브라우저로 부터 발생한 요청에 대해서 특별한 식별자를 부여합니다
+- 브라우저가 종료되면 데이터가 없어집니다
+
+# 세션 사용
+- session 속성 설정 : setAttribute()
+  session 속성 사용 : getAttribute()
+  session 속성 삭제 : removeAttribute()
+  session 무효화    : invalidate()
+   
+  
+  
+  
+  
+  
+  
+
+
