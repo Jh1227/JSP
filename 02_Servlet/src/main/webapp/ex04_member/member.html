@@ -1,0 +1,54 @@
+
+<!-- ex04_member/member.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>member</title>
+</head>
+<body>
+	<h1>정보 입력</h1>
+	<form method ="get" action ="http://localhost:8080/02_Servlet/memberServlet">
+		<table border ="1">
+			<tr>
+				<td class ="title">이 름</td>
+				<td><input type ="text" id ="user_name" name ="userName" size ="20"></td>
+			</tr>
+			<tr>
+				<td class ="title">성 별</td>
+				<td>
+					<input type ="radio" id ="gender_m" name ="gender" value ="남자" checked> 남
+					<input type ="radio" id ="gender_f" name ="gender" value ="여자" > 여
+				</td>
+			</tr>
+			<tr>
+				<td class ="title">취 미</td>
+				<td>
+					<input type ="checkbox" id ="hobby_1" name ="hobby" value ="독서"> 독서
+					<input type ="checkbox" id ="hobby_2" name ="hobby" value ="영화"> 영화
+					<input type ="checkbox" id ="hobby_3" name ="hobby" value ="음악"> 음악
+					<input type ="checkbox" id ="hobby_4" name ="hobby" value ="게임"> 게임
+				</td>
+			</tr>
+			<tr>
+				<td class ="title">과 목</td>
+				<td>
+					<select id ="subject" name ="subject" size ="5" multiple>
+						<option value ="java"> JAVA </option>
+						<option value ="jsp"> JSP </option>
+						<option value ="spring"> spring </option>
+						<option value ="jquery"> jQuery </option>
+						<option value ="servlet"> Servlet </option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<input type ="submit" value ="완료"> &nbsp; <input type ="reset" value ="취소">
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
