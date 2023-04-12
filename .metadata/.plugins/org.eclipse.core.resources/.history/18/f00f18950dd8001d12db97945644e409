@@ -1,0 +1,48 @@
+
+<!-- ex05_form.jsp -->
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ex05_form.jsp</title>
+<!-- 
+	# 국어, 영어, 수학 점수를 입력받는 form 을 작성하고,
+	  입력한 내용의 성적을 'ex05_choose.jsp'에서 확인하세요
+	  - 평균으로 학점을 구하세요( A, B, C, D, F )
+	    모든 과목의 점수가 있어야 결과가 나옵니다
+-->
+</head>
+<body>
+	<h1>점 수</h1>
+	<form action="ex05_choose.jsp" method ="get">
+		국어 : <input type ="text" name ="kor">
+		<br><br>
+		영어 : <input type ="text" name ="eng">
+		<br><br>
+		수학 : <input type ="text" name ="math">
+		<br><br>
+		<input type ="submit" value ="확인" onclick ="checkChoose()"> &nbsp; <input type ="reset" value ="다시 작성">
+	</form>
+	
+	<!-- script -->
+	<script type="text/javascript">
+		function checkChoose(){
+			if(document.ex05_form.kor.value != ""){
+				alert("점수를 입력하세요..");
+				document.ex05_form.kor.focus();
+			} else if(document.ex05_form.eng.value == ""){
+				alert("점수를 입력하세요..");
+				document.ex05_form.eng.focus();
+			} else if(document.ex05_form.math.value == ""){
+				alert("점수를 입력하세요..");
+				document.ex05_form.math.focus();
+			} else {
+				document.ex05_form.submit();
+			}
+		}
+	</script>
+</body>
+</html>

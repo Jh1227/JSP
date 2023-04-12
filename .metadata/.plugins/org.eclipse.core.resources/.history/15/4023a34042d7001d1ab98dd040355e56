@@ -1,0 +1,18 @@
+
+<!-- ex03_scope/memberPro2.jsp -->
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>memberPro2.jsp</title>
+<style type="text/css">
+table, th, td { border: 1px solid gray; border-collapse: collapse; }
+</style>
+</head>
+<body>
+	memberPro2.jsp
+</body>
+</html>

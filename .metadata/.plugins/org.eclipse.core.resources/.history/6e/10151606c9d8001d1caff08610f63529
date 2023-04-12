@@ -1,0 +1,21 @@
+
+<!-- ex10_fmt-number.jsp -->
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ex10_fmt-number.jsp</title>
+</head>
+<body>
+	<h1>숫자 포맷</h1>
+	<%--
+		# <fmt:formatNumber> : 숫자 포맷 설정
+		- <fmt:formatNumber var="변수 설정" value="출력할 숫자" type="출력 양식"
+							groupingUsed="구분 기호 사용 여부" pattern="숫자 패턴" scope="접근 범위"/>
+	--%>
+</body>
+</html>

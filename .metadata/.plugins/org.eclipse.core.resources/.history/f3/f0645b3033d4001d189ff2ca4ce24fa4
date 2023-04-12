@@ -1,0 +1,25 @@
+
+<!-- ex01_basic/ex05.jsp -->
+
+<%@page import="bean.MemberBean"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%
+	MemberBean mbA = new MemberBean();
+	mbA.setId("001");
+	mbA.setPwd("1234");
+	mbA.setName("mbA");
+	mbA.setEamil("mbA@test.com");
+	
+	
+%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ex05.jsp</title>
+</head>
+<body>
+
+</body>
+</html>

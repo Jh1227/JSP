@@ -1,0 +1,31 @@
+
+<!-- ex04_pageContext/pageContext.jsp -->
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>pageContext.jsp</title>
+</head>
+<body>
+	<h1>contextPath</h1>
+	<br>
+	<h2>
+		<a href ="http://localhost:8080/12_EL/ex04_pageContext/memberForm3.jsp">정보 입력3</a>
+	</h2>
+	
+	<!-- request 의 getContextPath() 메서드를 사용해서 컨텍스트 이름 가져오기 -->
+	<p><%=request.getContextPath() %></p>
+	<h2>
+		<a href ="<%=request.getContextPath() %>/ex04_pageContext/memberForm3.jsp">정보 입력3</a>
+	</h2>
+	
+	<!-- pageContext 를 사용해서 가져오기 -->
+	<p>${pageContext.request.contextPath }</p>
+	<h2>
+		<a href ="${pageContext.request.contextPath }/ex04_pageContext/memberForm3.jsp">정보 입력3</a>
+	</h2>
+</body>
+</html>

@@ -1,0 +1,21 @@
+
+<!-- ex06_form.jsp -->
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ex06_form.jsp</title>
+<!-- 
+	# 체크된 항목의 국가를 'ex06_forEach.jsp' 에서 출력하세요
+	  - 전체 항목수는 5개 이상
+	  
+	# 출력한 단 값을 입력받고, 해당 단의 값을 'ex06_forEach.jsp' 에서 출력하세요
+-->
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+
+<!-- ex01_set_out.jsp -->
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix ="c" uri ="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ex01_set_out.jsp</title>
+</head>
+<body>
+	<h1>변수 설정</h1>
+	<%--
+		# <c:set> : 변수 설정
+		  <c:set var ="변수명" value ="변수 값" scope ="접근 범위"/>
+		  - scope : page(기본), request, session, application
+		  
+	--%>
+	<br>
+	<h2>
+		<c:set var ="num_1" value ="1"/>
+		num_1 : ${num_1 }
+		<br><br>
+		
+		<c:set var ="num_2" value ="2"> 2 </c:set>
+	</h2>
+</body>
+</html>

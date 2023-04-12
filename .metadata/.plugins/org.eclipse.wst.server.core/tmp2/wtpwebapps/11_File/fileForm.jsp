@@ -1,0 +1,42 @@
+
+<!-- fileForm.jsp -->
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>fileForm.jsp</title>
+<style type="text/css">
+table, th, td { border: 1px solid black; border-collapse: collapse; padding: 4px; }
+textarea { resize: none; }
+</style>
+</head>
+<body>
+	<h1>파일 업로드</h1>
+	<br>
+	<form action="fileUpload.jsp" method ="post" enctype ="multipart/form-data">
+		<table>
+			<tr>
+				<th> 제 목 </th>
+				<td><input type ="text" name ="subject" size ="50"></td>
+			</tr>
+			<tr>
+				<th> 내 용 </th>
+				<td><textarea rows ="20" cols ="52" name ="content"></textarea></td>
+			</tr>
+			<tr>
+				<td colspan ="2">
+					<input type ="file" name ="upload" size ="50">
+				</td>
+			</tr>
+			<tr>
+				<td colspan ="2" align ="center">
+					<input type ="submit" value ="upload">
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

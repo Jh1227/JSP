@@ -1,0 +1,38 @@
+
+<!-- ex01_basic/ex05.jsp -->
+
+<%@page import="bean.MemberBean"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%
+	MemberBean mbA = new MemberBean();
+	mbA.setId("001");
+	mbA.setPwd("1234");
+	mbA.setName("mbA");
+	mbA.setEamil("mbA@test.com");
+	
+	
+%>
+<jsp:useBean id="mbB" class ="bean.MemberBean"/>
+<jsp:setProperty name ="mbB" property ="name" value ="mbB"/>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ex05.jsp</title>
+</head>
+<body>
+	<h1>empty</h1>
+	<br>
+	<h2>
+		\${empty "data" } : ${empty "data" }<br>
+		\${empty null } : ${empty null }<br>
+		\${empty "" } : ${empty "" }<br>
+		<br>
+		\${empty mbA } : ${empty mbA }<br>
+		\${empty mbB } : ${empty mbB }<br>
+		\${not empty mbB } : ${not empty mbB }<br>
+		<br>
+	</h2>
+</body>
+</html>

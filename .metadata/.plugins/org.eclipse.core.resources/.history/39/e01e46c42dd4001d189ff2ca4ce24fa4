@@ -1,0 +1,22 @@
+
+<!-- ex01_basic/ex03.jsp -->
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ex03.jsp</title>
+</head>
+<body>
+	<h1>비교 연산자</h1>
+	<br>
+	<h2>
+		\${10==10 } : ${10==10 }<br>
+		\${10eq10 } : ${10eq10 }<br>
+		\${"hi"="hi" } : ${"hi"="hi" }<br>
+		\${"hi"eq"hi" } : ${"hi"eq"hi" }<br>
+	</h2>
+</body>
+</html>

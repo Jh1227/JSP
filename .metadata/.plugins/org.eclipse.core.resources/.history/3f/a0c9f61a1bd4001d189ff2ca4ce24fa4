@@ -1,0 +1,31 @@
+
+
+< File.txt >
+
+# 파일 업로드에 필요한 요소
+- 파일 처리하는 form 의 메서드 및 enctype
+  > enctype : form data 가 서버로 보내질 때 인코딩 타입
+  			  method="post" enctype="multipart/form-data"
+- 업로드 파일이 저장되는 폴더
+- 파일을 업로드하면서 form 을 분석하는 라이브러리
+  > cos.jar
+  
+# cos.jar 다운로드
+- http://servlets.com/cos
+  > cos-22.05.zip
+
+# 가상폴더, 실제폴더가 따로 있습니다
+- 가상폴더
+  > workspace\프로젝트명\wepapp\storage
+
+
+
+# 찾는 법
+1. => C:\Users\Administrator\Desktop\JSP_수업\.metadata\.plugins\org.eclipse.wst.server.core\tmp2\wtpwebapps\11_File
+2. => 
+	<%
+		String path = application.getRealPath("/");
+	%>
+	<p><%=path %></p>
+
+

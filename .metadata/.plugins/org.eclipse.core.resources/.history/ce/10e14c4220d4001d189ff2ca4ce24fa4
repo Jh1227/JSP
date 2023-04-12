@@ -1,0 +1,20 @@
+
+<!-- fileUpload.jsp -->
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%
+	// 실제 저장 폴더 경로
+	String realFolder = request.getServletContext().getRealPath("/storage");
+	//out.println(realFolder);
+%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>fileUpload.jsp</title>
+</head>
+<body>
+	<h1>업로드 확인</h1>
+</body>
+</html>

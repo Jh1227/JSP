@@ -1,0 +1,22 @@
+
+<!-- ex04_form.jsp -->
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ex04_form.jsp</title>
+</head>
+<body>
+	<h1>입력</h1>
+	<form action="ex04_if.jsp" method ="get">
+		이 름 : <input type ="text" name ="name">
+		<br><br>
+		나 이 : <input type ="text" name ="age">
+		<br><br>
+		<input type ="submit" value ="확인">
+	</form>
+</body>
+</html>

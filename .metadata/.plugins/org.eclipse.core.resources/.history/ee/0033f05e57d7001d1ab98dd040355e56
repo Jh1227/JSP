@@ -1,0 +1,18 @@
+
+<!-- ex02_set.jsp -->
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ex02_set.jsp</title>
+</head>
+<body>
+	<h1>자바빈즈</h1>
+	<%--
+		# <c:set> 태그를 이용해서 자바빈즈나 컬렉션을 생성할 수 있습니다
+	--%>
+</body>
+</html>

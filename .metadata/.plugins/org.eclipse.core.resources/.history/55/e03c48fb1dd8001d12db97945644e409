@@ -1,0 +1,19 @@
+
+<!-- ex08_import.jsp -->
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ex08_import.jsp</title>
+</head>
+<body>
+	<h1>import</h1>
+	<%--
+		# <c:import> : <jsp:include> 액션태그와 같이 외부 파일을 현재 위치에 삽입합니다
+		- <c:import url="페이지 경로 or URL" var="변수명" scope="접근 범위"/>
+	--%>
+</body>
+</html>

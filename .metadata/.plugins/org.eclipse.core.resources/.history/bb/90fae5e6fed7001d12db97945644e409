@@ -1,0 +1,29 @@
+
+<!-- ex03_collection.jsp -->
+
+<%@page import="jstl.Person"%>
+<%@page import="java.util.ArrayList"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix ="c" uri ="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ex03_collection.jsp</title>
+</head>
+<body>
+	<h1>set - list</h1>
+	<br>
+	<%
+	ArrayList<Person> sList = new ArrayList<>();
+	sList.add(new Person("testA", 100));
+	sList.add(new Person("testB", 50));
+	%>
+	<c:set var ="personList" value ="<%=sList %>"/>
+	<h2>
+		이 름 : ${personList[1].name } <br>
+		나 이 : ${personList[0].age } <br>
+	</h2>
+</body>
+</html>

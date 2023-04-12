@@ -1,0 +1,22 @@
+
+<!-- ex01_basic/ex01.jsp -->
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" isELIgnored="false"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ex01.jsp</title>
+</head>
+<body>
+	<h1>표현 언어로 데이터 출력</h1>
+	<br>
+	<h2>
+		\${100 } : ${100 }<br>
+		\${"EL" } : ${"EL" }<br>
+		\${100+2 } : ${100+2 }<br>
+		\${"10"+2 } : ${"10"+2 }<br>
+	</h2>
+</body>
+</html>

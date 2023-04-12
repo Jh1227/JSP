@@ -1,0 +1,30 @@
+
+<!-- board/boardList.jsp -->
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%
+	int pg = Integer.parseInt(request.getParameter("pg"));
+	
+	int article = 5; // 한 페이지 글 목록수
+%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>boardList.jsp</title>
+</head>
+<body>
+	<h1>글목록</h1>
+	<br>
+	<table>
+		<tr>
+			<th width ="100px"> 글번호 </th>
+			<th width ="500px"> 제 목 </th>
+			<th width ="150px"> 작성자 </th>
+			<th width ="150px"> 작성일 </th>
+			<th width ="100px"> 조회수 </th>
+		</tr>
+	</table>
+</body>
+</html>

@@ -1,0 +1,36 @@
+
+<!-- ex07_binding/bindingResult.jsp -->
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>bindingResult.jsp</title>
+</head>
+<body>
+	<h1> 결 과 </h1>
+	<br>
+	<table>
+		<tr>
+			<th>아이디</th>
+			<th>비밀번호</th>
+			<th>이름</th>
+			<th>이메일</th>
+		</tr>
+		<tr>
+			<td>${param.id }</td>
+			<td>${param.pwd }</td>
+			<td>${param.name }</td>
+			<td>${param.email }</td>
+		</tr>
+		<tr>
+			<td>${mbA.id }</td>
+			<td>${mbA.pwd }</td>
+			<td>${mbA.name }</td>
+			<td>${mbA.email }</td>
+		</tr>
+	</table>
+</body>
+</html>

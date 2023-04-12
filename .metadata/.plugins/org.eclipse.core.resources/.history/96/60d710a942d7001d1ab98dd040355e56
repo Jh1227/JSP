@@ -1,0 +1,36 @@
+
+<!-- ex03_scope/memberPro2.jsp -->
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>memberPro2.jsp</title>
+<style type="text/css">
+table, th, td { border: 1px solid gray; border-collapse: collapse; }
+th, td { width: 100px; }
+</style>
+</head>
+<body>
+	<h1>입력 정보2</h1>
+	<br>
+	<table>
+		<tr>
+			<th>아이디</th>
+			<th>비밀번호</th>
+			<th>이름</th>
+			<th>이메일</th>
+			<th>주소</th>
+		</tr>
+		<tr>
+			<td>${ param.id }</td>
+			<td>${ param.pwd }</td>
+			<td>${ param.name }</td>
+			<td>${ param.email }</td>
+			<td>${ requestScope.addr }</td>
+		</tr>
+	</table>
+</body>
+</html>

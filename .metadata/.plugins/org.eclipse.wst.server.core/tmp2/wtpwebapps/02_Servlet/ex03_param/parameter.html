@@ -1,0 +1,33 @@
+
+<!-- ex03_param/parameter.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>parameter</title>
+<style type="text/css">
+td { padding: 10px; height: 26px; font-size: 24px; text-align: center }
+.title { width: 100px; }
+input[type=text] { height: 26px; font-size: 24px; }
+</style>
+</head>
+<body>
+	<h1>내용을 작성하세요</h1>
+	<form method ="get" action ="http://localhost:8080/02_Servlet/paramServlet">
+		<table border ="1">
+			<tr>
+				<td class ="title"> 이 름 </td><td><input type ="text" id ="user_name" name ="userName"></td>
+			</tr>
+			<tr>
+				<td class ="title"> 나 이 </td><td><input type ="text" id ="user_age" name ="userAge"></td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<input type ="submit" value ="완료"> &nbsp; <input type ="reset" value ="취소">
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

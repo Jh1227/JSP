@@ -1,0 +1,12 @@
+
+<!-- ex07_binding/bindingForward.jsp -->
+
+<%@page import="bean.MemberBean"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%
+	request.setCharacterEncoding("utf-8");
+	MemberBean member = new MemberBean("member", "1111", "멤버", "member@test.com");
+	request.setAttribute("manA", member);
+%>
+<jsp:forward page ="bindingResult.jsp"/>

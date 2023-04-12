@@ -1,0 +1,166 @@
+package board.dao;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+import javax.sql.DataSource;
+
+import board.dto.BoardDTO;
+
+public class BoardDAO {
+
+	private Connection con;
+	private PreparedStatement pstmt;
+	private ResultSet res;
+	private DataSource ds;
+	
+	public BoardDAO() {
+		try {
+			// InitialContext 객체 생성해서 설정된 정보 가져오기 : JNDI
+			Context context = new InitialContext();
+			
+			// Context 클래스의 lookup() 메서드는 'java:comp/env/jdbc/oracle' 을 가지고 DataSource 객체를 구합니다
+			// - lookup() 메서드를 사용해서 naming 서비스에서 자원을 찾습니다
+			// - JNDI 의 이름은 'java:comp/env/' 에 등록되어 있습니다
+			ds = (DataSource)context.lookup("java:comp/env/jdbc/oracle");
+		} catch (NamingException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	
+	// streamClose()
+	public void streamClose(ResultSet res, PreparedStatement pstmt, Connection con) {
+		try {
+			if(res != null) { res.close(); }
+			if(pstmt != null) { pstmt.close(); }
+			if(con != null) { con.close(); }
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	} // streamClose() end
+	
+	
+	public int write(BoardDTO boardDTO) {
+		
+		int su = 0;
+		
+		try {
+			
+			String sql = "insert into board values(board_seq.nextval, ?, ?, ?, ?, 0, sysdate)";
+			con = ds.getConnection();
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, boardDTO.getId()); // id
+			pstmt.setString(2, boardDTO.getName()); // name
+			pstmt.setString(3, boardDTO.getSubject()); // subject
+			pstmt.setString(4, boardDTO.getContent()); // content
+			su = pstmt.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				streamClose(res, pstmt, con);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+		return su;
+	} // write() end
+	
+	
+	// 글목록
+	public ArrayList<BoardDTO> boardList(int start, int last){
+		
+		ArrayList<BoardDTO> list = new ArrayList<>();
+		BoardDTO boardDTO = null;
+		
+		try {
+			
+			String sql = "select seq, id, name, subject, content, hit, to_char(logtime, 'YYYY.MM.DD') as logtime from "
+						 + "(select rownum rn, tt. * from "
+					     + "(select * from board order by seq desc) tt) "
+						 + "where rn>=? and rn<=?";
+			
+			con = ds.getConnection();
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, start);
+			pstmt.setInt(2, last);
+			res = pstmt.executeQuery();
+			
+			while(res.next()) {
+				boardDTO = new BoardDTO();
+				boardDTO.setSeq(res.getInt("seq"));
+				boardDTO.setId(res.getString("id"));
+				boardDTO.setName(res.getString("name"));
+				boardDTO.setSubject(res.getString("subject"));
+				boardDTO.setContent(res.getString("content"));
+				boardDTO.setHit(res.getInt("hit"));
+				boardDTO.setLogtime(res.getString("logtime"));
+				list.add(boardDTO);
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			streamClose(res, pstmt, con);
+		}
+		
+		return list;
+		
+	} // boardList() end
+	
+	
+	// 전체 글수
+	public int getTotalArticle() {
+		
+		int total = 0;
+		
+		try {
+			
+			String sql = "select count(*) from board";
+			con = ds.getConnection();
+			pstmt = con.prepareStatement(sql);
+			res = pstmt.executeQuery();
+			if(res.next()) {
+				total = res.getInt(1);
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			streamClose(res, pstmt, con);
+		}
+		
+		return total;
+		
+	} // getTotalArticle() end
+	
+	
+	// boardVeiw()
+	public int boardView(int seq) {
+		
+		int view = 0;
+		
+		try {
+			
+			String sql = "";
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			streamClose(res, pstmt, con);
+		}
+		
+		return view;
+		
+	} // boardVeiw() end
+	
+}

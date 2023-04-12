@@ -1,0 +1,25 @@
+
+<!-- ex02_param/memberPro.jsp -->
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%
+	request.setCharacterEncoding("utf-8");
+%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>memberPro.jsp</title>
+</head>
+<body>
+	<h1>결과 입력</h1>
+	<br>
+	<h3>
+		param.id : ${ param.id }<br>
+		param.pwd : ${ param.pwd }<br>
+		param.name : ${ param.name }<br>
+		param.email : ${ param.email }<br>
+	</h3>
+</body>
+</html>

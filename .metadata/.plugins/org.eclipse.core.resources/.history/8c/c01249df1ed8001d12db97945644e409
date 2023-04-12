@@ -1,0 +1,11 @@
+
+<!-- ex08_other.jsp -->
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<h2>ex08_other.jsp</h2>
+<ul>
+	<li> 저장된 값 : ${requestVar } </li>
+	<li> 매개변수1 : ${param.data_1 } </li>
+	<li> 매개변수2 : ${param.data_2 } </li>
+</ul>

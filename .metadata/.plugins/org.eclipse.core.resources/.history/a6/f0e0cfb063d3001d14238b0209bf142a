@@ -1,0 +1,43 @@
+
+<!-- board/boardView.jsp -->
+
+<%@page import="board.dto.BoardDTO"%>
+<%@page import="board.dao.BoardDAO"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%
+	int seq = Integer.parseInt(request.getParameter("seq"));
+	int pg = Integer.parseInt(request.getParameter("pg"));
+	
+	BoardDAO boardDAO = new BoardDAO();
+	BoardDTO boardDTO = boardDAO.boardView(seq);
+%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>boardView.jsp</title>
+<style type="text/css">
+table, th, td { border: 1px solid black; border-collapse: collapse; }
+</style>
+</head>
+<body>
+	<h1>글보기</h1>
+	<br>
+	<table>
+		<tr>
+			<td colspan ="3"><%=boardDTO.getSubject() %></td>
+		</tr>
+		<tr>
+			<td width ="300px"> 글번호 : <%=boardDTO.getSeq() %></td>
+			<td width ="300px"> 작성자 : <%=boardDTO.getName() %></td>
+			<td width ="300px"> 조회수 : <%=boardDTO.getHit() %></td>
+		</tr>
+		<tr>
+			<td colspan ="3" height ="300px" valign ="top">
+				<pre><%=boardDTO.getContent() %></pre>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>

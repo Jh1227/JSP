@@ -1,0 +1,21 @@
+
+<!-- ex05_bean/memberPro4.jsp -->
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>memberPro4.jsp</title>
+<style type="text/css">
+table, th, td { border: 1px solid gray; border-collapse: collapse; padding: 4px; }
+th, td { width: 120px; text-align: center; }
+</style>
+</head>
+<body>
+	<h1>입력 결과</h1>
+	<br>
+	
+</body>
+</html>
